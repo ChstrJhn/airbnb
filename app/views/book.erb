@@ -1,0 +1,13 @@
+<div class="container">
+<a href ="/"><p>Air Bee 'N Bee' (beta)</p></a>
+<h1>Want to make a booking? Leave your details below!</h1>
+
+  <form action="/listings/<%=@listing.id%>/booking" method="POST">
+  <p><b>Your Name: </b><input type="text" name="booking[name]"></p>
+  <p><b>Booking Start Date: </b><input type="text" name="booking[start_date]" placeholder="dd/mm/yy"></p>
+  <p><b>Booking End Date: </b><input type="text" name="booking[end_date]" placeholder="dd/mm/yy"></p>
+  <p><b>Confirm Email:</b><input type="email" name="booking[email]"></p>
+  <p><input type="submit" value="I Want To Rent!"></p>
+  </form>
+
+</div>

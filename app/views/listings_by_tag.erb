@@ -1,0 +1,13 @@
+<div class="container">
+<a href ="/"><p>Air Bee 'N Bee' (beta)</p></a>
+<h1>All listings tagged '<%=@tag.category%>'</h1>
+<%unless @listings_by_tag.nil?%>
+<ol>
+<%@listings_by_tag.each do |listing|%>
+<li>
+<a href ="/listings/<%=listing.id%>"><%= listing.title%></a>
+</li>
+ <%end%>
+</ol>
+<%end%>
+</div>

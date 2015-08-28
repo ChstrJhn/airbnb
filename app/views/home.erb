@@ -1,0 +1,33 @@
+<div class="container">
+
+  <h2> Air Bee 'N Bee (beta)</h2>
+
+    <h3>Login to update your property listings!</h3>
+    <form action="/login" method = "post">
+     <p>Email : <input type="text" name="login[email]"></p>
+     <p>Password : <input type="password" name="login[password]"></p>
+     <p><input type="submit" value="login"></p>
+    </form>
+     <p>Don't have an account? That's a shame, <a href="/signup"><b>Make one now!</b></a></p>
+
+
+       <p>Ain't got time for that? Explore all our listings below!</p>
+      <table border=1>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Posted On</th>
+       </tr>
+        <% @listings.each do |listing|%>
+        <tr>
+        <td><a href = "/listings/<%= listing.id%>"><%= listing.title%></a></td>
+        <td><%=listing.description%></td>
+        <td><%=listing.created_at%></td>
+       </tr>
+         <% end %>
+    </table>
+    <p>How about look for a place by location, type, or number of bedrooms? Check out our listing tags.</p>
+    <% @tags.each do|tag| %>
+ <a href ="/tags/<%=tag.category%>" style="display: inline;"><%= tag.category %></a>
+ <%end%>
+</div>

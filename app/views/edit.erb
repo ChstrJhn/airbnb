@@ -1,0 +1,12 @@
+<div class="container">
+
+<h2>Go ahead and edit your listing.</h2>
+
+<form action="/listings/<%=@listing.id%>/edit" method="post">
+<p><b>Title: </b> <input type="text" name="edit[title]" value ="<%=@listing.title%>"></p>
+<p><b>Edit The Description: </b></p>
+<textarea name="edit[description]" value ="<%=@listing.description%>" rows="10" cols="60"><%=@listing.description%></textarea></p>
+<p><input type="submit" value="Done!"></p>
+</form>
+
+</div>
