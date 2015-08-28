@@ -10,7 +10,9 @@
  <%end%>
 </ul>
 
+<%if current_user == @listing.user %>
 <p><a href="/listings/<%= @listing.id%>/edit"><button style="background-color:#8ccc96">Edit</button></a></p>
 <p><a href="/listings/<%= @listing.id%>/delete"><button style="background-color:#efeaf4">Delete</button></a></p>
+<%end%>
 
 </div>

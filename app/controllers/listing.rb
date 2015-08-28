@@ -45,8 +45,16 @@ post '/listings/:id/edit' do
 end
 
 get '/listings/:id/book' do
-  @listing = Listing.find_by_id(params[:id])
-  erb :book
+  @listings = Listing.all
+  @booked_listing = Listing.find(params[:id])
+  @tags = Tag.all
+  all_users = User.all
+  if current_user.id != @booked_listing.user.id
+    @listing = Listing.find_by_id(params[:id])
+    erb :book
+  else 
+    erb :home
+  end
 end
 
 post '/booking' do
