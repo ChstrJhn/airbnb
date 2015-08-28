@@ -1,4 +1,7 @@
 <div class="container">
+  <% if current_user%>
+ <p style="color: grey">You're currently logged in as <a href ="/userpage"><%=current_user.name%></p></a>
+  <%end%>
 
   <h2> Air Bee 'N Bee (beta)</h2>
 
