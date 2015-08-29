@@ -52,7 +52,7 @@ end
 get '/userpage' do
   if session[:user_id] 
     @user = User.find(session[:user_id])
-    @rentals = @user.bookings
+    @user_bookings = @user.bookings
     @listings = @user.listings.all
     erb :userpage
   else

@@ -4,16 +4,15 @@
 <input type="submit" value="logout">
 </form>
 
-<a href ="/"><p>Air Bee 'N Bee' (beta)</p></a>
+<a href ="/"><p>Air Bae 'N Bae</p></a>
 
-<h2> How's it going, <%= @user.name.capitalize %>.</h2>
+<h1><%= @user.name.capitalize %>'s Dashboard</h1>
 
-<h1>Your Air Bae 'N Bae Dashboard</h1>
   <p style="text-align: center">Got a place to rent? Create a new listing now!</p>
 
   <form action="/listings/user" method="post">
   <p><b>Give It A Title: </b><input type="text" name="new[title]" placeholder="Awesome possum crib"></p>
-  <p><b>Describe Your Place:</b></p><textarea name="new[description]" rows="10" cols="60" placeholder="super comfy and chill. It's the ultimate summer getaway spot."></textarea>
+  <p></p><textarea name="new[description]" rows="10" cols="60" placeholder="Your place needs a useful description! Is it comfy or spacious? What about access to LRT? Tell us more!"></textarea>
   <h4>What makes your place special? Add them as tags!</h4>
  <p><input type="text" name="tag" placeholder = "e.g. condo, gym, pool" multiple></p>
   <p><input type="submit" value="It's Now For Rent!"></p>
@@ -25,11 +24,13 @@
       <tr style="background-color: #5ea9de">
         <th>Title</th>
         <th>Description</th>
+        <th>Booked?</th>
        </tr>
         <% @listings.each do |listing|%>
         <tr>
         <td><a href = "/listings/<%= listing.id%>"><%= listing.title%></a></td>
         <td><%=listing.description%></td>
+        <td><%=listing.booked ? 'Yup' : 'Nope' %></td>
        </tr>
          <% end %>
          <%else%>
@@ -37,7 +38,7 @@
        <%end%>
     </table>
 
-  <h3>Here are properties you want to rent:</h3>
+  <h3>Here are properties you want to rent:</h3> 
   <table border=1>
   <tr style="background-color: #5ea9de">
     <th>Title</th>

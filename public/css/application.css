@@ -1,21 +1,25 @@
 .container {
-  margin: 20px auto;
-  width: 800px;
-  padding: 0px 20px 20px 20px;
+  margin: 10px auto;
+  width: 900px;
+  padding: 0px 5px 5px 5px;
   border: 1px dotted black;
-  height: 800px;
+  height: 900px;
   position:relative;
 }
 
 a {
-	color: inherit;
-    text-decoration: underline;
+	color: #0181a7;
+    text-decoration: none;
+}
+
+body {
+	font-family: 'Helvetica Neue',  Helvetica;
 }
 
 .tags {
 
 	padding:1px 5px; 
-	background:#33ccaa; 
+	background:#bce1f4; 
 	border:10 none;
 	cursor:pointer;
 	border-radius: 5px;
@@ -24,17 +28,17 @@ a {
 
 .tags:hover {
 
-    background: #04B4AE;
+    background: #9dcbeb;
 }
 
 .logout {
 	float: right;
-	margin-top: 30px;
+	margin-top: 25px;
 }
 
 p {
-	font-family: helvetica;
-	font-size:130%;
+	font-family: 'Helvetica Neue';
+	font-size:120%;
 }
 
 h1{
@@ -70,6 +74,15 @@ form input {
 	display: inline;
 }
 
+table {
+  display: block;
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 120%;
+  overflow: auto;
+  width: auto;
+}
+
 
 table tr:first-child {
 	background-color: #5ea9de;
@@ -77,8 +90,10 @@ table tr:first-child {
 
 
 table tr th:nth-child(-n+3) {
+	padding: 5px;
 	color: #ffffff;
 }
+
 
 input[type=submit] {
 	padding:3px 20px; 
@@ -91,4 +106,17 @@ input[type=submit] {
 input[type=submit]:hover {
 
 background:#04B4AE;
+}
+
+input[type=password] {
+  width:250px;
+  padding: 3px;
+  border: solid 3px #dcdcdc;
+}
+
+
+input[type=text] {
+  width:250px;
+  padding: 3px;
+  border: solid 3px #dcdcdc;
 }

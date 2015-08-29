@@ -13,7 +13,7 @@
 <p><%= @listing.description%></p>
 <h4>Tags related to this listing:</h4>
 <% @categories_arr.each do|tag| %>
-<a href="/tags/<%=tag%>"><%=tag%></a>
+<a href="/tags/<%=tag%>" class="tags"><%=tag%></a>
  <%end%>
 </ul>
 

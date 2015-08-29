@@ -6,6 +6,7 @@ post '/listings/:id/booking' do
 	if @all_bookings.find_by(start_date: @booking[:start_date]).nil?
 		@new_booking = @user.bookings.create(start_date: @booking[:start_date], end_date: @booking[:end_date])
 		@listing.bookings << @new_booking
+		@listing[:booked] = true
 		redirect '/thank_you'
 	else
 		redirect "/listings/#{@listing.id}/book"
