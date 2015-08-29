@@ -12,18 +12,23 @@ end
 
 
 post '/login' do
-   @input = params[:login]
-  
-   unless @input.nil?
-     @login = User.find_by_email(@input[:email])   
-       if @input[:password] == @login.password  
-       session[:user_id] = @login.id
-       redirect '/userpage'
-       else
-       	redirect '/'
+
+  @login_info = params[:login]
+
+  unless User.find_by_email(@login_info[:email]).nil?
+    @user = User.find_by_email(@login_info[:email])
+
+      if @login_info[:password] == @user.password 
+        session[:user_id] = @user.id
+        redirect '/userpage'
+      end
+
+      else
+        redirect '/'
     end
-    redirect '/error'
-  end
+
+  redirect '/'
+
 end
 
 get '/signup' do
