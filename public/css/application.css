@@ -14,11 +14,11 @@ a {
 
 .tags {
 
-	padding:3px 20px; 
+	padding:1px 5px; 
 	background:#33ccaa; 
-	border:0 none;
+	border:10 none;
 	cursor:pointer;
-	border-radius: 5px; 
+	border-radius: 5px;
 
 }
 
@@ -49,6 +49,10 @@ h3{
 	text-align: center;
 }
 
+h4{
+	text-align: center;
+}
+
 a:hover {
     color: #33ccaa;
 }
@@ -65,6 +69,7 @@ form input {
 
 	display: inline;
 }
+
 
 table tr:first-child {
 	background-color: #5ea9de;

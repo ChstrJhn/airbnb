@@ -39,7 +39,7 @@ post '/signup' do
   @signup_info = params[:signup]
 
   if @signup_info[:password] == @signup_info[:confirm_pass]
-    new_user = User.create(@signup_info)
+    new_user = User.create(name: @signup_info[:name], email: @signup_info[:email], password: @signup_info[:password])
     @user = User.find(new_user.id)
     session[:user_id] = @user.id
     redirect '/userpage'
@@ -52,7 +52,7 @@ end
 get '/userpage' do
   if session[:user_id] 
     @user = User.find(session[:user_id])
-
+    @rentals = @user.bookings
     @listings = @user.listings.all
     erb :userpage
   else

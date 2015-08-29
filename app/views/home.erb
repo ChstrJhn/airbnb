@@ -8,7 +8,7 @@
 
   <h1> Air Bae 'N Bae (beta)</h1>
 
-  <h3>Login to update your property listings!</h3>
+  <h4>Login to update your property listings!</h4>
 
     <form action="/login" method = "post">
      Email : <input type="text" name="login[email]">
@@ -16,26 +16,33 @@
      <input type="submit" value="login">
     </form>
 
-     <p style="text-align: center">Don't have an account? That's a shame, <a href="/signup"><b>Make one now!</b></a></p>
+     <p style="text-align: center">Don't have an account? <a href="/signup"><b>Make one now!</b></a></p>
 
      <p style="text-align: center">Ain't got time for that? Explore all our listings below!</p>
 
-      <table border=1>
-      <tr>
+     
+  <% unless @listings.empty? %>    
+ <table border=1>
+      <tr style="background-color: #5ea9de">
         <th>Title</th>
         <th>Description</th>
-        <th>Posted on</th>
+        <th>Posted On</th>
        </tr>
         <% @listings.each do |listing|%>
         <tr>
         <td><a href = "/listings/<%= listing.id%>"><%= listing.title%></a></td>
         <td><%=listing.description%></td>
-        <td><%=listing.created_at%></td>
+        <td><%=listing.created_at.day%>/<%=listing.created_at.month%>/<%=listing.created_at.year%></td>
        </tr>
          <% end %>
+         <% else%>
+         <h4 style="text-align: center">..unfortunately there are no listings yet, <a href="/signup">signup</a> to start posting!</h4>
+       <%end%>
     </table>
 
-    <p>Looking for a place by location or LTR access? Search accomodation by tags.</p>
+
+
+    <p style="text-align: center">Looking for a place by location or LTR access? Search accomodation by tags.</p>
     
     <% @tags.each do|tag| %>
     <a href ="/tags/<%=tag.category%>" class="tags" style="text-align: center";><%= tag.category %></a>

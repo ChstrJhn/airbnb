@@ -4,9 +4,14 @@ post '/listings/:id/booking' do
 	@listing = Listing.find(params[:id])
 	@all_bookings = Booking.all
 	if @all_bookings.find_by(start_date: @booking[:start_date]).nil?
-		@user.bookings.create(start_date: @booking[:start_date], end_date: @booking[:end_date])
-		redirect '/'
+		@new_booking = @user.bookings.create(start_date: @booking[:start_date], end_date: @booking[:end_date])
+		@listing.bookings << @new_booking
+		redirect '/thank_you'
 	else
 		redirect "/listings/#{@listing.id}/book"
 	end
+end
+
+get '/thank_you' do
+	erb :thank_you
 end

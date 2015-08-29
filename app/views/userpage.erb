@@ -6,34 +6,43 @@
 
 <a href ="/"><p>Air Bee 'N Bee' (beta)</p></a>
 
-<h2> Welcome <%= @user.name.capitalize %>!</h2>
+<h2> How's it going, <%= @user.name.capitalize %>.</h2>
 
 <h1>Your Air Bae 'N Bae Dashboard</h1>
-  <p style="text-align: center">Got a place to rent? Create a new listing now</p>
+  <p style="text-align: center">Got a place to rent? Create a new listing now!</p>
 
   <form action="/listings/user" method="post">
-  <p><b>Your Title: </b><input type="text" name="new[title]"></p>
-  <p><b>Describe Your Place:</b></p><textarea name="new[description]" rows="10" cols="60"></textarea>
+  <p><b>Give It A Title: </b><input type="text" name="new[title]" placeholder="Awesome possum crib"></p>
+  <p><b>Describe Your Place:</b></p><textarea name="new[description]" rows="10" cols="60" placeholder="super comfy and chill. It's the ultimate summer getaway spot."></textarea>
   <h4>What makes your place special? Add them as tags!</h4>
- <p><input type="text" name="tag" placeholder = "e.g. condominium, near_lrt" multiple></p>
+ <p><input type="text" name="tag" placeholder = "e.g. condo, gym, pool" multiple></p>
   <p><input type="submit" value="It's Now For Rent!"></p>
   </form>
 
   <h3>Here are all your listings:</h3>
-  
+  <% unless @listings.empty? %> 
     <table border=1>
       <tr style="background-color: #5ea9de">
         <th>Title</th>
         <th>Description</th>
        </tr>
-       <% unless @listings.nil? %>
         <% @listings.each do |listing|%>
         <tr>
         <td><a href = "/listings/<%= listing.id%>"><%= listing.title%></a></td>
         <td><%=listing.description%></td>
        </tr>
          <% end %>
-         <% end %>
+         <%else%>
+         <p style="text-align: center">..nothing yet.</p>
+       <%end%>
     </table>
+
+  <h3>Here are properties you want to rent:</h3>
+  <table border=1>
+  <tr style="background-color: #5ea9de">
+    <th>Title</th>
+    <th>Description</th>
+  </tr>
+  </table>
 
 </div>
