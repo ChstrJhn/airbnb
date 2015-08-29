@@ -17,16 +17,13 @@ post '/login' do
 
   unless User.find_by_email(@login_info[:email]).nil?
     @user = User.find_by_email(@login_info[:email])
-
       if @login_info[:password] == @user.password 
         session[:user_id] = @user.id
         redirect '/userpage'
       end
-
       else
         redirect '/'
     end
-
   redirect '/'
 
 end
@@ -39,14 +36,10 @@ end
 
 post '/signup' do
 
-  @process = params[:signup]
+  @signup_info = params[:signup]
 
-  if @process[:password] == @process[:confirm_pass]
-    new_user = User.create(
-      name: @process[:name], 
-      email: @process[:email], 
-      password: @process[:password]
-      )
+  if @signup_info[:password] == @signup_info[:confirm_pass]
+    new_user = User.create(@signup_info)
     @user = User.find(new_user.id)
     session[:user_id] = @user.id
     redirect '/userpage'

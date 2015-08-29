@@ -3,7 +3,7 @@
   width: 800px;
   padding: 0px 20px 20px 20px;
   border: 1px dotted black;
-  height: 600px;
+  height: 800px;
   position:relative;
 }
 
@@ -27,12 +27,21 @@ a {
     background: #04B4AE;
 }
 
+.logout {
+	float: right;
+	margin-top: 30px;
+}
+
 p {
 	font-family: helvetica;
 	font-size:130%;
 }
 
 h1{
+	text-align: center;
+}
+
+h2{
 	text-align: center;
 }
 

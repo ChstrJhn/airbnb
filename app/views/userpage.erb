@@ -1,9 +1,15 @@
 <div class="container">
+
+<form action="/logout" method="get" class="logout">
+<input type="submit" value="logout">
+</form>
+
 <a href ="/"><p>Air Bee 'N Bee' (beta)</p></a>
+
 <h2> Welcome <%= @user.name.capitalize %>!</h2>
 
 <h1>Your Air Bae 'N Bae Dashboard</h1>
-  <p>Got a place to rent? Create a new listing now</p>
+  <p style="text-align: center">Got a place to rent? Create a new listing now</p>
 
   <form action="/listings/user" method="post">
   <p><b>Your Title: </b><input type="text" name="new[title]"></p>
@@ -29,9 +35,5 @@
          <% end %>
          <% end %>
     </table>
-
-<form action="/logout" method="get">
-<input type="submit" value="logout">
-</form>
 
 </div>
