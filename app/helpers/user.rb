@@ -1,5 +1,4 @@
 def current_user
-	byebug
 @all_users = User.all
   if session[:user_id] && @all_users.empty? == false
     return User.find(session[:user_id])

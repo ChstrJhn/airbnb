@@ -1,10 +1,9 @@
 <div class="container">
 
-<%unless @all_users.nil? %>
   <% if current_user%>
     <p style="color: grey">You're currently logged in as <a href ="/userpage"><%=current_user.name%></p></a>
-  <%end%>
-  <p style="color: grey">You/re not logged in</p>
+  <%else%>
+  <p style="color: grey">You're not logged in</p>
 <%end%>
 
 <a href ="/"><p>Air Bae 'N Bae (beta)</p></a>
@@ -12,8 +11,8 @@
 
   <form action="/listings/<%=@listing.id%>/booking" method="POST">
   <p><b>Your Name: </b><input type="text" name="booking[name]"></p>
-  <p><b>Booking Start Date: </b><input type="text" name="booking[start_date]" placeholder="dd/mm/yy"></p>
-  <p><b>Booking End Date: </b><input type="text" name="booking[end_date]" placeholder="dd/mm/yy"></p>
+  <p><b>Booking Start Date: </b><input type="text" name="booking[start_date]" placeholder="yyyy/mm/dd"></p>
+  <p><b>Booking End Date: </b><input type="text" name="booking[end_date]" placeholder="yyyy/mm/dd"></p>
   <p><b>Confirm Email:</b><input type="email" name="booking[email]"></p>
   <p><input type="submit" value="I Want To Rent!"></p>
   </form>

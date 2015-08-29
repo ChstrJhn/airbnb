@@ -53,9 +53,9 @@ end
 
 get '/userpage' do
   if session[:user_id] 
-    @userz = User.find(session[:user_id])
+    @user = User.find(session[:user_id])
 
-    @listings = @userz.listings.all
+    @listings = @user.listings.all
     erb :userpage
   else
     redirect '/'
