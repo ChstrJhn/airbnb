@@ -1,7 +1,11 @@
 <div class="container">
+
+<%unless @all_users.nil? %>
   <% if current_user%>
- <p style="color: grey">You're currently logged in as <a href ="/userpage"><%=current_user.name%></p></a>
+    <p style="color: grey">You're currently logged in as <a href ="/userpage"><%=current_user.name%></p></a>
   <%end%>
+  <p style="color: grey">You/re not logged in</p>
+<%end%>
 
   <h2> Air Bae 'N Bae (beta)</h2>
 
@@ -15,7 +19,7 @@
 
 
        <p>Ain't got time for that? Explore all our listings below!</p>
-      <table border=1>
+      <table border=5>
       <tr>
         <th>Title</th>
         <th>Description</th>

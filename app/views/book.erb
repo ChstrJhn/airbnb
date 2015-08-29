@@ -1,6 +1,13 @@
 <div class="container">
-<p style="color: grey">You're currently logged in as <a href ="/userpage"><%=current_user.name%></p></a>
-<a href ="/"><p>Air Bee 'N Bee' (beta)</p></a>
+
+<%unless @all_users.nil? %>
+  <% if current_user%>
+    <p style="color: grey">You're currently logged in as <a href ="/userpage"><%=current_user.name%></p></a>
+  <%end%>
+  <p style="color: grey">You/re not logged in</p>
+<%end%>
+
+<a href ="/"><p>Air Bae 'N Bae (beta)</p></a>
 <h1>Want to make a booking? Leave your details below!</h1>
 
   <form action="/listings/<%=@listing.id%>/booking" method="POST">

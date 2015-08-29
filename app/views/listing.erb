@@ -1,5 +1,13 @@
 <div class="container">
-<a href ="/"><p><b>Air Bee 'N Bee' (beta)</b></p></a>
+
+<%unless @all_users.nil? %>
+  <% if current_user%>
+    <p style="color: grey">You're currently logged in as <a href ="/userpage"><%=current_user.name%></p></a>
+  <%end%>
+  <p style="color: grey">You/re not logged in</p>
+<%end%>
+
+<a href ="/"><p><b>Air Bae 'N Bae (beta)</b></p></a>
 <h1><%= @listing.title%></h1>
 <h4>Posted by <%=@listing.user.name%> at <%=@listing.created_at%></h4>
 <p><a href="/listings/<%= @listing.id%>/book"><button style="background-color:#f15928;">Book Now</button></a></p>

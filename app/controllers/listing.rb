@@ -32,7 +32,7 @@ get '/listings/:id/delete' do
 end
 
 get '/listings/:id/edit' do
-  @listing = Listing.find_by_id(params[:id])
+  @listing = Listing.find(params[:id])
   erb :edit
 end
 
@@ -46,15 +46,23 @@ end
 
 get '/listings/:id/book' do
   @listings = Listing.all
-  @booked_listing = Listing.find(params[:id])
   @tags = Tag.all
   all_users = User.all
-  if current_user.id != @booked_listing.user.id
+  @categories_arr = []
+  @listing = Listing.find(params[:id])
+  @list_categories = @listing.tags
+
+  @list_categories.each do |name|
+    @categories_arr << name.category
+  end
+
+  if current_user.id != @listing.user.id
     @listing = Listing.find_by_id(params[:id])
     erb :book
   else 
-    erb :home
+    erb :listing
   end
+
 end
 
 post '/booking' do
