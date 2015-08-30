@@ -45,16 +45,19 @@
 
   <h3>Here are properties you want to rent:</h3> 
   <table>
-  <tr style="background-color: #5ea9de">
+  <tr>
     <th>Title</th>
     <th>Description</th>
-    <th>Start date</th>
-    <th>End date</th>
+    <th>Booking dates</th>
   </tr>
+  <%@user_bookings.each do |booking|%>
+  <% listing = Listing.find(booking.listing_id)%>
   <tr>
-    <th></th>
-    <th></th>
+    <td><a href ="/listings/<%= listing.id%>"><%=listing.title%></td></a>
+    <td><%=listing.description%></td>
+    <td><b><%=booking.start_date%></b> until <b><%=booking.end_date%></b></td>
   </tr>
+  <%end%>
   </table>
 
 </div>

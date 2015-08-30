@@ -1,7 +1,6 @@
 get '/' do
   @listings = Listing.all
   @tags = Tag.all
-
   erb :home
 
 end
@@ -19,6 +18,7 @@ post '/login' do
     @user = User.find_by_email(@login_info[:email])
       if @login_info[:password] == @user.password 
         session[:user_id] = @user.id
+        @user_bookings = @user.bookings
         redirect '/userpage'
       end
       else
