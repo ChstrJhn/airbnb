@@ -5,6 +5,7 @@ class CreateListings < ActiveRecord::Migration
       t.string :title
       t.string :description
       t.boolean :booked, default: :false
+      t.integer :booking_count, default: 0
       t.timestamps null:false
     end
   end

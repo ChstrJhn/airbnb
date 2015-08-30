@@ -1,6 +1,6 @@
 .container {
   margin: 10px auto;
-  width: 900px;
+  width: 1150px;
   padding: 0px 5px 5px 5px;
   border: 1px dotted black;
   height: 900px;
@@ -17,10 +17,21 @@ body {
 }
 
 .tags {
-
+    text-align: center;
 	padding:1px 5px; 
+	margin: 5px;
 	background:#bce1f4; 
 	border:10 none;
+	cursor:pointer;
+	border-radius: 5px;
+}
+
+.booking_tag {
+	margin: 3px;
+	font-size: 50%;
+	padding:1px 3px; 
+	background:#f68b66; 
+	border:0 none;
 	cursor:pointer;
 	border-radius: 5px;
 
@@ -88,10 +99,44 @@ table tr:first-child {
 	background-color: #5ea9de;
 }
 
+.edit {
+	background-color:#8ccc96;
+	float: right;
+	margin-right: 5px;
+	padding: 10px;
+	border-radius: 5px;
+	border:0 none;
+	cursor:pointer; 
+
+}
+
+.delete {
+	float: right;
+	margin-right: 5px;
+	padding: 10px;
+	border-radius: 5px;
+	border:0 none;
+	cursor:pointer; 
+
+}
+
+.book {
+	background-color:#f15928;
+	float: right;
+	padding: 10px;
+	border-radius: 5px;
+	border:0 none;
+	cursor:pointer; 
+}
+
 
 table tr th:nth-child(-n+3) {
 	padding: 5px;
 	color: #ffffff;
+}
+
+table tr td {
+	padding: 10px;
 }
 
 

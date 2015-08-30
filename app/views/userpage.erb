@@ -18,6 +18,7 @@
   <p><input type="submit" value="It's Now For Rent!"></p>
   </form>
 
+
   <h3>Here are all your listings:</h3>
   <% unless @listings.empty? %> 
     <table border=1>
@@ -26,7 +27,9 @@
         <th>Description</th>
         <th>Booked?</th>
        </tr>
+
         <% @listings.each do |listing|%>
+
         <tr>
         <td><a href = "/listings/<%= listing.id%>"><%= listing.title%></a></td>
         <td><%=listing.description%></td>

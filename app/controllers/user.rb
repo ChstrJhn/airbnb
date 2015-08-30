@@ -1,7 +1,7 @@
 get '/' do
-  @all_users = User.all
   @listings = Listing.all
   @tags = Tag.all
+
   erb :home
 
 end

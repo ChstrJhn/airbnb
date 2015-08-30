@@ -11,12 +11,12 @@
   <h4>Login to update your property listings!</h4>
 
     <form action="/login" method = "post">
-     Email : <input type="text" name="login[email]">
-     Password : <input type="password" name="login[password]">
+     <input type="text" name="login[email]" placeholder="enter your registered email">
+     <input type="password" name="login[password]" placeholder="enter your super secure password">
      <input type="submit" value="login">
     </form>
 
-     <p style="text-align: center">Don't have an account? <a href="/signup"><b>Make one now!</b></a></p>
+     <p style="text-align: center">Don't have an account? <a href="/signup"><b>Make one now.</b></a></p>
 
      <p style="text-align: center">Ain't got time for that? Explore all our listings below!</p>
 
@@ -30,7 +30,7 @@
        </tr>
         <% @listings.each do |listing|%>
         <tr>
-        <td><a href = "/listings/<%= listing.id%>"><%= listing.title%></a></td>
+        <td><a href = "/listings/<%= listing.id%>"><%= listing.title%><a class="booking_tag"><b> <%=listing.booked ? listing.booking_count.to_s + ' Booking' : 'Available' %></a></b></td>
         <td><%=listing.description%></td>
         <td><%=listing.created_at.day%>/<%=listing.created_at.month%>/<%=listing.created_at.year%></td>
        </tr>
@@ -45,7 +45,7 @@
     <p style="text-align: center">Looking for a place by location or LTR access? Search accomodation by tags.</p>
     
     <% @tags.each do|tag| %>
-    <a href ="/tags/<%=tag.category%>" class="tags" style="text-align: center";><%= tag.category %></a>
+    <a href ="/tags/<%=tag.category%>" class="tags"><%= tag.category %></a>
     <%end%>
 </div>
 

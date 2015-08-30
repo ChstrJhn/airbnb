@@ -1,16 +1,16 @@
 post '/listings/user' do 
-  @details = params[:new]
-  @tags = params[:tag]
-  arr = []
-  @user = User.find_by_id(session[:user_id])
-  @new_listing = @user.listings.create(@details)
-  arr = @tags.split
-  arr.map! {|category| category.gsub(",","")}
-  arr.each do |tag|
-  	@tags = Tag.find_or_create_by(category: tag)
-    @new_listing.tags << @tags
-    end
-  redirect '/userpage'
+    @details = params[:new]
+    @tags = params[:tag]
+    arr = []
+    @user = User.find_by_id(session[:user_id])
+    @new_listing = @user.listings.create(@details)
+    arr = @tags.split
+    arr.map! {|category| category.gsub(",","")}
+    arr.each do |tag|
+    	@tags = Tag.find_or_create_by(category: tag)
+      @new_listing.tags << @tags
+      end
+    redirect '/userpage'
 end
 
 
@@ -65,9 +65,6 @@ get '/listings/:id/book' do
 
 end
 
-post '/booking' do
-  redirect '/'
-end
 
 get '/tags/:category' do
 
