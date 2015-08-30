@@ -1,7 +1,7 @@
 <div class="container">
 
   <% if current_user%>
-    <p style="color: grey">You're currently logged in as <a href ="/userpage"><%=current_user.name%></p></a>
+    <p class="login_status">You're currently logged in as <a href ="/userpage"><%=current_user.name.capitalize%></p></a>
   <%else%>
   <p style="color: grey">You're not logged in</p>
 <%end%>
@@ -22,7 +22,7 @@
 
      
   <% unless @listings.empty? %>    
- <table border=1>
+ <table align = "center">
       <tr>
         <th>Title</th>
         <th>Description</th>
@@ -44,8 +44,10 @@
 
     <p style="text-align: center">Looking for a place by location or LTR access? Search accomodation by tags.</p>
     
+    <div class="tag_list">    
     <% @tags.each do|tag| %>
     <a href ="/tags/<%=tag.category%>" class="tags"><%= tag.category %></a>
     <%end%>
+    </div>
 </div>
 

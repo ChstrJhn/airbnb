@@ -21,10 +21,11 @@
 
   <h3>Here are all your listings:</h3>
   <% unless @listings.empty? %> 
-    <table border=1>
+    <table align = "center">
       <tr style="background-color: #5ea9de">
         <th>Title</th>
         <th>Description</th>
+        <th>Posted on</th>
         <th>Booked?</th>
        </tr>
 
@@ -33,7 +34,8 @@
         <tr>
         <td><a href = "/listings/<%= listing.id%>"><%= listing.title%></a></td>
         <td><%=listing.description%></td>
-        <td><%=listing.booked ? 'Yup' : 'Nope' %></td>
+        <td><%=listing.created_at.day%>/<%=listing.created_at.month%>/<%=listing.created_at.year%></td>
+        <td><%=listing.booked ? listing.booking_count.to_s + ' Booking' : 'Nope' %></td>
        </tr>
          <% end %>
          <%else%>
@@ -42,10 +44,16 @@
     </table>
 
   <h3>Here are properties you want to rent:</h3> 
-  <table border=1>
+  <table>
   <tr style="background-color: #5ea9de">
     <th>Title</th>
     <th>Description</th>
+    <th>Start date</th>
+    <th>End date</th>
+  </tr>
+  <tr>
+    <th></th>
+    <th></th>
   </tr>
   </table>
 

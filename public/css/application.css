@@ -16,6 +16,11 @@ body {
 	font-family: 'Helvetica Neue',  Helvetica;
 }
 
+.login_status {
+	color: #828383;
+	margin-left: 10px;
+}
+
 .tags {
     text-align: center;
 	padding:1px 5px; 
@@ -24,6 +29,15 @@ body {
 	border:10 none;
 	cursor:pointer;
 	border-radius: 5px;
+}
+
+.tags:hover {
+
+    background: #9dcbeb;
+}
+
+.tag_list {
+	text-align: center;
 }
 
 .booking_tag {
@@ -37,14 +51,39 @@ body {
 
 }
 
-.tags:hover {
-
-    background: #9dcbeb;
-}
-
 .logout {
 	float: right;
 	margin-top: 25px;
+}
+
+.edit {
+	background-color:#8ccc96;
+	float: right;
+	margin-right: 5px;
+	padding: 10px;
+	border-radius: 5px;
+	border:0 none;
+	cursor:pointer; 
+
+}
+
+.delete {
+	float: right;
+	margin-right: 5px;
+	padding: 10px;
+	border-radius: 5px;
+	border:0 none;
+	cursor:pointer; 
+
+}
+
+.book {
+	background-color:#f15928;
+	float: right;
+	padding: 10px;
+	border-radius: 5px;
+	border:0 none;
+	cursor:pointer; 
 }
 
 p {
@@ -99,49 +138,20 @@ table tr:first-child {
 	background-color: #5ea9de;
 }
 
-.edit {
-	background-color:#8ccc96;
-	float: right;
-	margin-right: 5px;
-	padding: 10px;
-	border-radius: 5px;
-	border:0 none;
-	cursor:pointer; 
 
-}
-
-.delete {
-	float: right;
-	margin-right: 5px;
-	padding: 10px;
-	border-radius: 5px;
-	border:0 none;
-	cursor:pointer; 
-
-}
-
-.book {
-	background-color:#f15928;
-	float: right;
-	padding: 10px;
-	border-radius: 5px;
-	border:0 none;
-	cursor:pointer; 
-}
-
-
-table tr th:nth-child(-n+3) {
+table tr th:nth-child(-n+5) {
 	padding: 5px;
 	color: #ffffff;
 }
 
 table tr td {
+	background: #ececec;
 	padding: 10px;
 }
 
 
 input[type=submit] {
-	padding:3px 20px; 
+	padding:5px 20px; 
 	background:#33ccaa; 
 	border:0 none;
 	cursor:pointer;

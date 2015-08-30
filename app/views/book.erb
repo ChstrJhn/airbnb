@@ -1,7 +1,7 @@
 <div class="container">
 
   <% if current_user%>
-    <p style="color: grey">You're currently logged in as <a href ="/userpage"><%=current_user.name%></p></a>
+    <p class="login_status">You're currently logged in as <a href ="/userpage"><%=current_user.name.capitalize%></p></a>
   <%else%>
   <p style="color: grey">You're not logged in</p>
 <%end%>
