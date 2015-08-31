@@ -42,7 +42,7 @@ body {
 
 .booking_tag {
 	margin: 3px;
-	font-size: 50%;
+	font-size: 70%;
 	padding:1px 3px; 
 	background:#f68b66; 
 	border:0 none;
@@ -92,6 +92,7 @@ p {
 }
 
 h1{
+	color:#029a96;
 	text-align: center;
 }
 

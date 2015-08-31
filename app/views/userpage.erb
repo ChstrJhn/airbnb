@@ -55,7 +55,7 @@
   <tr>
     <td><a href ="/listings/<%= listing.id%>"><%=listing.title%></td></a>
     <td><%=listing.description%></td>
-    <td><b><%=booking.start_date%></b> until <b><%=booking.end_date%></b></td>
+    <td><b><%=booking.start_date.day%>/<%=booking.start_date.month%>/<%=booking.start_date.year%></b> to <b><%=booking.end_date.day%>/<%=booking.end_date.month%>/<%=booking.end_date.year%></b></td>
   </tr>
   <%end%>
   </table>

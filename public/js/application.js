@@ -1,7 +1,13 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+  $(".delete").click(function() {
+    if(confirm("Sure you want to delete?")){
+    	$(this).closest('tr').delay().fadeOut();
+    }
+    else {
+    	return false;
+    }
+  });
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
 });
+
+
