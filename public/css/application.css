@@ -37,7 +37,12 @@ body {
 }
 
 .tag_list {
+
 	text-align: center;
+}
+
+.user_listings_table {
+	margin: auto;
 }
 
 .booking_tag {
@@ -123,15 +128,6 @@ form {
 form input {
 
 	display: inline;
-}
-
-table {
-  display: block;
-  font-family: sans-serif;
-  -webkit-font-smoothing: antialiased;
-  font-size: 120%;
-  overflow: auto;
-  width: auto;
 }
 
 

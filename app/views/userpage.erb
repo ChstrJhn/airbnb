@@ -20,27 +20,31 @@
 
 
   <h3>Here are all your listings:</h3>
-  <% unless @listings.empty? %> 
-    <table align = "center">
+
+  <% unless @listings.empty? %>
+    <table class="user_listings_table">
       <tr style="background-color: #5ea9de">
         <th>Title</th>
         <th>Description</th>
         <th>Posted on</th>
         <th>Booked?</th>
+        <th>Manage</th>
        </tr>
-
         <% @listings.each do |listing|%>
-
         <tr>
         <td><a href = "/listings/<%= listing.id%>"><%= listing.title%></a></td>
         <td><%=listing.description%></td>
         <td><%=listing.created_at.day%>/<%=listing.created_at.month%>/<%=listing.created_at.year%></td>
         <td><%=listing.booked ? listing.booking_count.to_s + ' Booking' : 'Nope' %></td>
+        <td><form class="delete" action="/listings/<%= listing.id%>/delete" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" value="Delete">
+            </form></td>
        </tr>
-         <% end %>
-         <%else%>
-         <p style="text-align: center">..nothing yet.</p>
-       <%end%>
+        <% end %>
+        <%else%>
+          <p style="text-align: center">..nothing yet.</p>
+  <%end%>
     </table>
 
   <h3>Here are properties you want to rent:</h3> 

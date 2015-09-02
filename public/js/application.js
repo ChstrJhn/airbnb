@@ -1,13 +1,16 @@
 $(document).ready(function() {
-  $(".delete").click(function() {
-    if(confirm("Sure you want to delete?")){
-    	$(this).closest('tr').delay().fadeOut();
-    }
-    else {
-    	return false;
-    }
+  $("form.delete").submit(function(event) {
+  	event.preventDefault();
+  	var $target = $(event.target);
+    $target.find("input[type=submit]").val("Deleting...");
+    
+    $.ajax({
+    	type: "DELETE",
+    	url: $target.attr("action"),
+    }).done(function(response){
+    	console.log(response);
+    	$target.parent().parent().parent().remove();
+    })
   });
 
 });
-
-

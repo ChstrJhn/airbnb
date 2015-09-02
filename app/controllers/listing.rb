@@ -24,7 +24,7 @@ get'/listings/:id' do
 erb :listing
 end
 
-get '/listings/:id/delete' do
+delete '/listings/:id/delete' do
   @listing= Listing.find(params[:id])
   @listing.destroy
 

@@ -1,7 +1,6 @@
 <div class="container">
 <%if current_user == @listing.user %>
-<p><a href="/listings/<%= @listing.id%>/edit"><button class = "edit">Edit</button></a></p>
-<p><a href="/listings/<%= @listing.id%>/delete"><button class ="delete">Delete</button></a></p>
+<p><a href="/listings/<%= @listing.id%>/edit" ><button class = "edit">Edit</button></a></p>
 <%end%>
 
   <% if current_user%>
